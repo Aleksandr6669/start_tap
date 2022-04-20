@@ -1,0 +1,25 @@
+{% extends 'pase.html' %}
+
+{% block title %}
+Добавление статей
+{% endblock %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Отправитель: {{user_mess}}</h1>
+
+    <div class="posts">
+
+        <p>Отправитель: {{user_mess}}</p>
+       
+    </div>
+    <div  class="container mt-5">
+    <form   method="post">
+        <input type="text" name = "user" class="form-control" placeholder="Введите получателя"><br>
+        <textarea type = "intro" name = "msg" class="form-control" placeholder="Введите текст"></textarea><br>
+        <input  type="submit"  class="gradient-button" value="Отправить">
+        <!-- <a href=/create_article >Сахранить</a> -->
+    </form>
+</div>
+{% endblock %}

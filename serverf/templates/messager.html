@@ -1,0 +1,24 @@
+{% extends 'pase.html' %}
+
+{% block title %}
+Сообщение
+{% endblock %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Получатель: {{user}} </h1>
+
+    <div class="posts">
+
+        <p>Отправитель: {{user_mess}}</p>
+       
+    </div>
+    <div  class="container mt-5">
+    <form   method="post">
+        <textarea type ="intro" name="msg" class="form-control" placeholder="Введите текст"></textarea><br>
+        <input  type="submit"  class="gradient-button" value="Отправить">
+        <!-- <a href=/create_article >Сахранить</a> -->
+    </form>
+</div>
+{% endblock %}

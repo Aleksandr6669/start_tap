@@ -1,0 +1,25 @@
+{% extends 'pase.html' %}
+
+{% block title %}
+Добавление статей
+{% endblock %}
+
+{% for msg in get_flashed_messages() %}
+<div  class="flash">{{msg}}</div>
+{% endfor %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Добавление статей</h1>
+    </div>
+
+    <div  class="container mt-5">
+    <form   method="post">
+        <input type="text" name="title" class="form-control" placeholder="Введите название"><br>
+        <textarea name="intro" id="intro" class="form-control" placeholder="Введите сокращеный текст"></textarea><br>
+        <textarea name="text" id="text" class="form-control" placeholder="Введите основной текст"></textarea><br>
+        <input  type="submit"  class="gradient-button" value="Сохранить">
+        <!-- <a href=/create_article >Сахранить</a> -->
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'pase.html' %}
+
+{% block title %}
+{{ user.name }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>{{ user.name }}</h1>
+
+    <div class="posts">
+
+        <p> {{ user.user_name }}</p>
+        <p><b> Дата: {{ user.date.date() }} </b></p>
+        <a href=/admin class="gradient-button">Назад</a>
+        <a href=/delete_user/{{user.id}} class="gradient-button">Удалить</a>
+
+    </div>
+
+
+</div>
+{% endblock %}

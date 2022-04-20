@@ -1,0 +1,33 @@
+{% extends 'pase.html' %}
+
+{% block title %}
+{{ user.user_name }}
+{% endblock %}
+
+
+{% block body %} 
+<div class=" poz grad " >
+    
+    <h1>{{ user.name }}</h1>
+
+    <div class="posts">
+
+        <p> {{ user.user_name }}</p>
+        <p><b> Дата: {{ user.date.date() }} </b></p>
+        <a href=/create_messager/{{user.id}} class="gradient-button">Написать сообщение</a>
+    </div> 
+</div>
+<div >
+   <h1 class=" grad" >Все сообщения</h1>
+   
+    {% for el in messager %}
+    <div class="posts">
+        <h2> {{ el.user_mess }} </h2>
+           <p> {{ el.messager }}</p>
+        <p><b> Дата {{ el.date.date() }} </b></p>
+        <a href=/messager/{{el.user_mess}}/{{user.user_name}}  class="gradient-button">Ответить</a>
+        </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

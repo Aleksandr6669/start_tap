@@ -1,0 +1,22 @@
+{% extends 'pase_index.html' %}
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Регистрация</h1>
+    </div>
+    <div  class="gradient"></div>
+    <div  class="container mt-5">
+    <form    method="post">
+        <input type="intro" name="name" class="form-control" placeholder="Введите имя"><br>
+        <input type="intro" name="user_name" class="form-control" placeholder="Введите лигин"><br>
+        <input type="text" name="password" class="form-control" placeholder="Придумайте пароль"><br>
+        <input type="text" name="repeed_password" class="form-control" placeholder="Повторите пароль"><br>
+        <input type="submit"  class="gradient-button" value="Регистрация">
+    </form>
+</div>
+{% endblock %}

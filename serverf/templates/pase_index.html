@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&amp;display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>{% block title %}{% endblock %}</title>
+<body class="poz fom">
+    <div class="d-flex flex-column flex-md-row align-items-center pb-2 mb-3 gradient">
+        <a href="/" class=" lign-items-center text-dark text-decoration-none">
+          <div class="ms-md-auto">
+              <h1 class="gradient-text">Постим вместе</h1>
+            </div>
+                <nav class=" mt-2 mt-md-2 ms-md-auto">
+                <a class="gradient-button" href="/log">Войти в личный </a>
+               
+                
+            </nav>
+    </div>
+    <div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+     <div class="d-flex flex-column flex-md-row align-items-center pb-2 mb-3 gradient">
+        <div class="flash">
+        {% for message in messages %}
+              <h1 class="gradient-text content">{{ message }}</h1>
+            </div>
+          </div>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    {% block body %}{% endblock %}
+    </div>
+</body>
+</html>

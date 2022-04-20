@@ -1,0 +1,22 @@
+{% extends 'pase.html' %}
+
+{% block title %}
+Посты
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Все пользователи</h1>
+
+    {% for el in user %}
+    <div class="posts">
+        <h2> {{ el.name }} </h2>
+        <p> {{ el.user_name }}</p>
+        <p><b> Дата {{ el.date.date() }} </b></p>
+        <a href=/users/{{el.id}} class="gradient-button">Детальнее</a>
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endblock %}
