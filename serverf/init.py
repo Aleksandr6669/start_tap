@@ -16,12 +16,15 @@ from flask_cors import CORS
 import logging
 from logging import getLogger
 from logging.handlers import SMTPHandler
-from OpenSSL import SSL
 from flask_sslify import SSLify
+#from OpenSSL import SSL
 
-#context = SSL.Context(SSL.SSLv3_METHOD)
-#context.use_privatekey_file('server.key')
-#context.use_certificate_file('server.crt')
+
+#context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+#context.use_privatekey_file('private.key')
+#context.use_certificate_file('certificate.crt')
+#context.load_cert_chain('PATH_TO_PUBLIC_KEY','PATH_TO_PRIVATE_KEY')
+
 
 #context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
 #context.use_privatekey_file('server.key')
@@ -44,16 +47,16 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(days=1)
 login_manager = LoginManager(app)
 db = SQLAlchemy(app)
-sslify = SSLify(app) 
-
+context = ('/home/servet_bak/certificate.crt', '/home/servet_bak/private.key')
+sslify = SSLify(app, age=300)
 
 from serverf import back, modls, routs
 
 
-
+#app.run(debug=True)
 app.run(host = '0.0.0.0', port = 5000
        ,
-    ssl_context='adhoc'
-    #ssl_context=context
+    #ssl_context='adhoc'
+    ssl_context=context
     )
-    
+   
